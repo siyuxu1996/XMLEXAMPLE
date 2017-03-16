@@ -3,7 +3,6 @@ package pkgTests;
 import static org.junit.Assert.*;
 
 import java.util.Date;
-import java.util.Map;
 
 import org.junit.Test;
 
