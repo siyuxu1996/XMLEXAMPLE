@@ -33,17 +33,17 @@ public class Catalog {
 	}
 	
 	public Book GetBook(Catalog cat, String id){
-		for(Book b : cat.getBooks()){
-			try{
-			if(b.getId()==id){
-				this.id=b.id();
-				return b;
-			}
-			else if(b.getId() != id){
-				}
-			} catch (BookException exc){
+
+		try{
+			for(Book b : cat.getBooks()){
+				if(b.getId()==id)
+					return b;
+			}	
+		} catch (BookException exc){
 				System.out.println("This book is not found in the catalog" + exc.getMessage());
+				return null;
 			}
+		return null;	
 		}
-	}
 }
+	
