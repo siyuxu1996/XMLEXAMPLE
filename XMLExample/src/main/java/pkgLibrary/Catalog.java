@@ -31,14 +31,8 @@ public class Catalog {
 	public void setBooks(ArrayList<Book> books) {
 		this.books = books;
 	}
-	
-	public Book GetBook(Catalog cat, String id) throws BookException{
 
-		for(Book b : cat.getBooks()){
-			if(b.getId()==id)
-				return b;
-		}
-		return null;	
-		}
+	
+	
 }
 	
