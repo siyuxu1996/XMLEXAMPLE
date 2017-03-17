@@ -41,6 +41,7 @@ public class Catalog {
 	public void setBooks(ArrayList<Book> books) {
 		this.books = books;
 	}
+
 	
 	public void addBook(String id, Book book) {
 		try
@@ -56,6 +57,9 @@ public class Catalog {
 		}catch (BookException exc){
 				System.out.println("Hey! It is here");
 		}
+
+	
+	
 }
 
 	

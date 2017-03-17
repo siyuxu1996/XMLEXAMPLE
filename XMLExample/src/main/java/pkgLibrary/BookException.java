@@ -1,19 +1,18 @@
 
 package pkgLibrary;
-
-public class BookException extends Exception
-{
-	private Book d;
+public class BookException extends Exception {
+	private Book b;
 	
-	public BookException()
-	{
+	public BookException(){
 		super();
 	}
 	
-	public BookException(Book b)
-	{
-		super();
-		this.d = b;
+	public BookException(Book b){
+		super("Not good.");
+		this.b = b;
 	}
 	
+	public Book B(){
+		return b;
+	}
 }

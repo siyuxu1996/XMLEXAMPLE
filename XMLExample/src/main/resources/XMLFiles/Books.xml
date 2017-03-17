@@ -142,102 +142,12 @@
         <title>Visual Studio 7: A Comprehensive Guide</title>
     </book>
     <book id="bk888">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:08:13.108-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk101">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:08:13.157-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk888">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:09:02.830-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk999">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:10:42.168-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk101">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:10:42.205-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk888">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:11:01.839-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk888">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:13:48.631-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk888">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:16:10.960-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk888">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:18:57.820-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk999">
-        <author>Taylor</author>
-        <cost>50.0</cost>
-        <description>Life</description>
-        <genre>bio</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:18:57.867-04:00</publish_date>
-        <title>My Life</title>
-    </book>
-    <book id="bk888">
         <author>123</author>
         <cost>50.0</cost>
         <description>012</description>
         <genre>789</genre>
         <price>100.0</price>
-        <publish_date>2017-03-17T17:20:36.903-04:00</publish_date>
+        <publish_date>2017-03-17T17:39:57.655-04:00</publish_date>
         <title>456</title>
     </book>
     <book id="bk888">
@@ -246,25 +156,7 @@
         <description>012</description>
         <genre>789</genre>
         <price>100.0</price>
-        <publish_date>2017-03-17T17:20:36.949-04:00</publish_date>
-        <title>456</title>
-    </book>
-    <book id="bk888">
-        <author>123</author>
-        <cost>50.0</cost>
-        <description>012</description>
-        <genre>789</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:21:20.466-04:00</publish_date>
-        <title>456</title>
-    </book>
-    <book id="bk888">
-        <author>123</author>
-        <cost>50.0</cost>
-        <description>012</description>
-        <genre>789</genre>
-        <price>100.0</price>
-        <publish_date>2017-03-17T17:21:20.513-04:00</publish_date>
+        <publish_date>2017-03-17T17:39:57.708-04:00</publish_date>
         <title>456</title>
     </book>
 </catalog>

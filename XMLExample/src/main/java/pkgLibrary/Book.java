@@ -1,9 +1,15 @@
 
 package pkgLibrary;
-
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ArrayList;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -27,17 +33,7 @@ public class Book {
 	public Book() {
 
 	}
-	public Book(String id) {
-		Book c = getBook(id);
-		this.id = c.getId();
-		this.author = c.getAuthor();
-		this.title = c.getTitle();
-		this.genre = c.getGenre();		
-		this.price = c.getPrice();
-		this.Cost = c.getCost();
-		this.publish_date = c.getPublish_date();
-		this.description = c.getDescription();
-	}
+
 	
 	public Book(String id, String author, String title, String genre, double price, double Cost, Date publish_date, String description)
 	{
@@ -50,6 +46,19 @@ public class Book {
 		this.Cost = Cost;
 		this.publish_date = publish_date;
 		this.description = description;
+	}
+	
+	public Book(String id){
+		super();
+		Book b = GetBook(id);
+		this.setId(id);
+		this.setAuthor(b.getAuthor());
+		this.setTitle(b.getTitle());
+		this.setGenre(b.getGenre());
+		this.setPrice(b.getPrice());
+		this.setCost(b.getCost());
+		this.setPublish_date(b.getPublish_date());
+		this.setDescription(b.getDescription());
 	}
 	
 	public String getId() {
@@ -138,7 +147,35 @@ public class Book {
 		return null;
 	}
 }
+	public Book GetBook(String id){
+		try{
+			Catalog cat = ReadXMLFile();
+			for(Book b : cat.getBooks()){
+				
+				if(b.getId().equals(id))
+					return b;
+			}
+			throw new BookException(this);
+		}catch(BookException e){
+			System.out.println("Book" + id + " was not found in the catlog.");
+			return null;
+		}
+	}
 	
+	public void AddBook(String id, Book book){
+		try{
+			Catalog cat = ReadXMLFile();
+			ArrayList<Book>catalog = cat.getBooks();
+			for(Book b : cat.getBooks())
+				if(b.getId() == id)
+					throw new BookException(this);
+			catalog.add(book);
+			cat.setBooks(catalog);
+			WriteXMLFile(cat);
+		}catch(BookException e){
+			System.out.println("Book" + id + " already exists");
+		}
+	}
 	
 	private static Catalog ReadXMLFile() {
 
@@ -161,6 +198,7 @@ public class Book {
 		return cat;
 
 	}
+
 	private static void WriteXMLFile(Catalog cat) {
 		try {
 
@@ -190,4 +228,6 @@ public class Book {
 		return cat;		
 	}
 	
+	
+
 }
