@@ -1,11 +1,19 @@
+
 package pkgLibrary;
 
-public class BookException extends Exception{
-	public BookException(String exc){
-		super(exc);
+public class BookException extends Exception
+{
+	private Book d;
+	
+	public BookException()
+	{
+		super();
 	}
 	
-	public String getMessage(){
-		return super.getMessage();
+	public BookException(Book b)
+	{
+		super();
+		this.d = b;
 	}
+	
 }

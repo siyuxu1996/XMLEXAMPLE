@@ -1,10 +1,17 @@
+
 package pkgLibrary;
 
+import java.io.File;
 import java.util.Date;
+import java.util.ArrayList;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.Marshaller;
 
 public class Book {
 
@@ -20,7 +27,18 @@ public class Book {
 	public Book() {
 
 	}
-
+	public Book(String id) {
+		Book c = getBook(id);
+		this.id = c.getId();
+		this.author = c.getAuthor();
+		this.title = c.getTitle();
+		this.genre = c.getGenre();		
+		this.price = c.getPrice();
+		this.Cost = c.getCost();
+		this.publish_date = c.getPublish_date();
+		this.description = c.getDescription();
+	}
+	
 	public Book(String id, String author, String title, String genre, double price, double Cost, Date publish_date, String description)
 	{
 		super();
@@ -106,7 +124,70 @@ public class Book {
 		this.description = description;
 	}
 
+	public Book getBook(String id) {
+		try
+		{
+			Catalog cat = ReadXMLFile();
+		for(Book b : cat.getBooks()){
+			if(b.getId().equals(id))
+				return b;
+		}
+		throw new BookException(this);
+	}catch (BookException exc){
+		System.out.println("can not find it");
+		return null;
+	}
+}
 	
 	
+	private static Catalog ReadXMLFile() {
 
+		Catalog cat = null;
+
+		String basePath = new File("").getAbsolutePath();
+		basePath = basePath + "\\src\\main\\resources\\XMLFiles\\Books.xml";
+		File file = new File(basePath);
+
+		System.out.println(file.getAbsolutePath());
+		try {
+			JAXBContext jaxbContext = JAXBContext.newInstance(Catalog.class);
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+			cat = (Catalog) jaxbUnmarshaller.unmarshal(file);
+			System.out.println(cat);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+
+		return cat;
+
+	}
+	private static void WriteXMLFile(Catalog cat) {
+		try {
+
+			String basePath = new File("").getAbsolutePath();
+			basePath = basePath + "\\src\\main\\resources\\XMLFiles\\Books.xml";
+			File file = new File(basePath);
+
+			JAXBContext jaxbContext = JAXBContext.newInstance(Catalog.class);
+			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+			// output pretty printed
+			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+			jaxbMarshaller.marshal(cat, file);
+			jaxbMarshaller.marshal(cat, System.out);
+
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+	private static Catalog ReadCatalog() {
+		Catalog cat = ReadXMLFile();
+		
+		System.out.println("cat ID " + cat.getId());
+		System.out.println("Book count: " + cat.getBooks().size());
+
+		return cat;		
+	}
+	
 }
