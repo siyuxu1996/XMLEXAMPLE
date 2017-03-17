@@ -177,4 +177,22 @@
         <publish_date>2017-03-17T17:44:39.552-04:00</publish_date>
         <title>456</title>
     </book>
+    <book id="bk888">
+        <author>123</author>
+        <cost>50.0</cost>
+        <description>012</description>
+        <genre>789</genre>
+        <price>100.0</price>
+        <publish_date>2017-03-17T18:02:51.064-04:00</publish_date>
+        <title>456</title>
+    </book>
+    <book id="bk888">
+        <author>123</author>
+        <cost>50.0</cost>
+        <description>012</description>
+        <genre>789</genre>
+        <price>100.0</price>
+        <publish_date>2017-03-17T18:02:51.112-04:00</publish_date>
+        <title>456</title>
+    </book>
 </catalog>
