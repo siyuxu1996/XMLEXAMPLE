@@ -50,7 +50,7 @@ public class Book {
 	
 	public Book(String id){
 		super();
-		Book b = GetBook(id);
+		Book b = getBook(id);
 		this.setId(id);
 		this.setAuthor(b.getAuthor());
 		this.setTitle(b.getTitle());
@@ -147,35 +147,8 @@ public class Book {
 		return null;
 	}
 }
-	public Book GetBook(String id){
-		try{
-			Catalog cat = ReadXMLFile();
-			for(Book b : cat.getBooks()){
-				
-				if(b.getId().equals(id))
-					return b;
-			}
-			throw new BookException(this);
-		}catch(BookException e){
-			System.out.println("Book" + id + " was not found in the catlog.");
-			return null;
-		}
-	}
+
 	
-	public void AddBook(String id, Book book){
-		try{
-			Catalog cat = ReadXMLFile();
-			ArrayList<Book>catalog = cat.getBooks();
-			for(Book b : cat.getBooks())
-				if(b.getId() == id)
-					throw new BookException(this);
-			catalog.add(book);
-			cat.setBooks(catalog);
-			WriteXMLFile(cat);
-		}catch(BookException e){
-			System.out.println("Book" + id + " already exists");
-		}
-	}
 	
 	private static Catalog ReadXMLFile() {
 
